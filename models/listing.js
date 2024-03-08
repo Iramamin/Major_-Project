@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const Schema=mongoose.Schema;
-const ListingSchema=new Schema({
+const Schema = mongoose.Schema;
+const listingSchema=new Schema({
     title:{type:String,required:true},
     discription:{type: String },
     image:{type:String,
@@ -10,7 +10,7 @@ const ListingSchema=new Schema({
     location:{type:String},
     country:{type:String},
 });
-const Listing=mongoose.model("listing",ListingSchema);
+const Listing=mongoose.model("listing",listingSchema);
 module.exports=Listing;
 
 app.get("/testListing",async(req,res)=>{
