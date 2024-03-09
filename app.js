@@ -2,7 +2,7 @@
 const express = require ('express');
 const app = express();
 const mongoose=require("mongoose");
-const Listing=require("../models/listing.js");
+const Listing=require("./models/listing.js");
 const path=require("path");
 const methodOverride=require("method-override");
 const ejsMate=require("ejs-mate");
@@ -52,7 +52,7 @@ app.get("/listings",async(req,res)=>{
 
 
 //new route
-app.get("./listings/new",function (req, res) {
+app.get("/listings/new",function (req, res) {
         res.render("listings/new.ejs");
     });
 
@@ -60,7 +60,7 @@ app.get("./listings/new",function (req, res) {
 app.get("/listings/:id", async(req,res)=>{
   let {id}=req.params;
   const listing=await Listing.findById(id);
-  res.render("listing/show.ejs",{listing});
+  res.render("listings/show.ejs",{listing});
 });
 
 
@@ -83,7 +83,7 @@ res.render("listings/edit.ejs",{listing});
 app.put("/listing/:id",async(req,res)=>{
 let {id}=req.params;
 await Listing.findByIdAndUpdate(id,{...req.body.listing});
-res.redirect(`/listings ${id}` );
+res.redirect(`/listings/${id}` );
 
 });
 
