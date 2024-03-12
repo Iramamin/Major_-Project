@@ -22,7 +22,7 @@ async function main(){
 
 
 app.listen(8080,()=>{
-    console.log("server is listening on port 8080");
+    console.log("server is listening on port 8080"); 
 });
 
 //setup view engine and middleware
