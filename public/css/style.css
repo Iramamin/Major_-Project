@@ -52,7 +52,7 @@ align-items:space-evenly;
 }
 
 /* cards */
-.cards{
+.listing-card{
     border:none !important;
     margin-bottom:2rem;
 }
@@ -105,3 +105,12 @@ border:none !important;
 background-color:#fe424d !important;
 border:none !important;
 }
+
+
+/* MAP */
+#map { 
+height:400px;
+width:80vh;
+}
+
+
